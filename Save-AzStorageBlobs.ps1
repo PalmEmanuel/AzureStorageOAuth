@@ -1,3 +1,8 @@
+# Set tenant, storage account name and blob uri
+$TenantId = '<tenant-id>'
+$StorageAccountName = '<storage-account-name>'
+$Uri = "https://$StorageAccountName.blob.core.windows.net"
+
 # Set up function to use for API calls
 # This is to avoid encoding issues with Invoke-RestMethod/WebRequest
 function Invoke-AzStorageWebRequest {
@@ -22,11 +27,6 @@ function Invoke-AzStorageWebRequest {
     # Output the data
     $StreamReader.ReadToEnd()
 }
-
-# Set tenant, storage account name and blob uri
-$TenantId = '<tenant-id>'
-$StorageAccountName = '<storage-account-name>'
-$Uri = "https://$StorageAccountName.blob.core.windows.net"
 
 # Requires AzAuth module
 # Make sure that you have a Data Blob role
